@@ -57,7 +57,7 @@ export const Navbar = () => {
                         href="/"
                     >
                         <Logo />
-                        <p className="font-bold text-inherit">ACME</p>
+                        <p className="font-bold text-inherit">Code-Image</p>
                     </Link>
                 </NavbarBrand>
                 <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -83,18 +83,12 @@ export const Navbar = () => {
                 justify="end"
             >
                 <NavbarItem className="hidden sm:flex gap-2">
-                    <Link isExternal href={siteConfig.links.twitter} title="Twitter">
-                        <TwitterIcon className="text-default-500" />
-                    </Link>
-                    <Link isExternal href={siteConfig.links.discord} title="Discord">
-                        <DiscordIcon className="text-default-500" />
-                    </Link>
+
                     <Link isExternal href={siteConfig.links.github} title="GitHub">
                         <GithubIcon className="text-default-500" />
                     </Link>
                     <ThemeSwitch />
                 </NavbarItem>
-                <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
                 <NavbarItem className="hidden md:flex">
                     <Button
                         isExternal
@@ -118,22 +112,20 @@ export const Navbar = () => {
             </NavbarContent>
 
             <NavbarMenu>
-                {searchInput}
-                <div className="mx-4 mt-2 flex flex-col gap-2">
+                <div className="mx-8 text-2xl mt-2 flex flex-col gap-2">
                     {siteConfig.navMenuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>
                             <Link
                                 color={
-                                    index === 2
-                                        ? "primary"
-                                        : index === siteConfig.navMenuItems.length - 1
-                                            ? "danger"
-                                            : "foreground"
+                                    "foreground"
                                 }
                                 href="#"
                                 size="lg"
                             >
+                                <div className="flex gap-1">
                                 {item.label}
+                                {item.icon === "love" && <HeartFilledIcon className="text-danger" />}
+                                </div>
                             </Link>
                         </NavbarMenuItem>
                     ))}
