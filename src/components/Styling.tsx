@@ -12,8 +12,10 @@ export default function Styling({onFontSizeChange}:StylingProps) {
                 label="Font Size"
                 labelPlacement="outside"
                 variant="underlined"
-                placeholder="0"
+                placeholder="12"
                 type="number"
+                max={24}
+                min={10}
                 defaultValue="12"
                 onChange={(e)=>onFontSizeChange(e.target.value)}
             />
