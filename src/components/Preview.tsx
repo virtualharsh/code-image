@@ -1,21 +1,43 @@
-import { Textarea } from "@heroui/input";
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
+import { androidstudio } from '@uiw/codemirror-themes-all';
+import { EditorView } from '@codemirror/view';
 
 interface PreviewProps {
     fontSize: number;
+    fontFamily: string;
+    letterSpace : number;
+    lineHeight:number;
 }
 
-export default function Preview({fontSize}:PreviewProps) {
-
+export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight }: PreviewProps) {
+    
     return (
-        <div className="w-2/3 p-16">
+        <div className="w-full h-[600px]">
+            <CodeMirror
+                value=""
+                placeholder="Write your code here!"
+                height="600px"
+                theme={androidstudio}
+                extensions={[
+                    javascript(),
+                    EditorView.theme({
+                        '&': {
+                            fontFamily: `${fontFamily}, monospace`,
+                            fontSize: `${fontSize}px`,
+                            letterSpacing: `${letterSpace}px`,  
+                            lineHeight: `${lineHeight}`,
+                        },
+                        '.cm-scroller': {
+                            fontFamily: `${fontFamily}, monospace`,
+                            fontSize: `${fontSize}px`,
+                            letterSpacing: `${letterSpace}px`,  
+                            lineHeight: `${lineHeight}`,
 
-            <Textarea
-                className="col-span-12 md:col-span-6 mb-6 md:mb-0"
-                // label="Description"
-                labelPlacement="outside"
-                placeholder="Enter your Code"
-                variant="underlined"
-                style={{fontSize:`${fontSize}px`}}
+                        },
+                    }),
+                ]}
+                basicSetup={true}
             />
         </div>
     );

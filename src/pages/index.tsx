@@ -1,68 +1,35 @@
-// import { Link } from "@heroui/link";
-// import { Snippet } from "@heroui/snippet";
-// import { Code } from "@heroui/code";
-// import { button as buttonStyles } from "@heroui/theme";
-
-// import { siteConfig } from "@/config/site";
-// import { title, subtitle } from "@/components/primitives";
-// import { GithubIcon } from "@/components/icons";
-// import DefaultLayout from "@/layouts/default";
-
-// export default function IndexPage() {
-//     return (
-//         <DefaultLayout>
-//             <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-//                 <div className="inline-block max-w-lg text-center justify-center">
-//                     <span className={title()}>Make&nbsp;</span>
-//                     <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-//                     <br />
-//                     <span className={title()}>
-//                         websites regardless of your design experience.
-//                     </span>
-//                     <div className={subtitle({ class: "mt-4" })}>
-//                         Beautiful, fast and modern React UI library.
-//                     </div>
-//                 </div>
-
-//                 <div className="flex gap-3">
-//                     <Link
-//                         isExternal
-//                         className={buttonStyles({
-//                             color: "primary",
-//                             radius: "full",
-//                             variant: "shadow",
-//                         })}
-//                         href={siteConfig.links.docs}
-//                     >
-//                         Documentation
-//                     </Link>
-//                     <Link
-//                         isExternal
-//                         className={buttonStyles({ variant: "bordered", radius: "full" })}
-//                         href={siteConfig.links.github}
-//                     >
-//                         <GithubIcon size={20} />
-//                         GitHub
-//                     </Link>
-//                 </div>
-
-//                 <div className="mt-8">
-//                     <Snippet hideCopyButton hideSymbol variant="bordered">
-//                         <span>
-//                             Get started by editing{" "}
-//                             <Code color="primary">pages/index.tsx</Code>
-//                         </span>
-//                     </Snippet>
-//                 </div>
-//             </section>
-//         </DefaultLayout>
-//     );
-// }
-
-import  HomePage  from "@/pages/HomePage"
+import { Navbar } from "@/components/navbar";
+import Preview from "@/components/Preview";
+import Styling from "@/components/Styling";
+import { useFontFamily } from "@/hooks/useFontFamily";
+import { useFontSize } from "@/hooks/useFontSize";
+import { useLetterSpacing } from "@/hooks/useLetterSpacing";
+import { useLineHeightChange } from "@/hooks/useLineHeightChange";
 
 export default function IndexPage() {
-    return(
-        <HomePage />
-    )
+    const { fontSize, handleChange } = useFontSize(12);
+    const { fontFamily, handleFontFamilyChange } = useFontFamily();
+    const { letterSpace, handleLetterSpacingChange } = useLetterSpacing(1);
+    const { lineHeight, handleLineHeightChange } = useLineHeightChange(1);
+
+    return (
+        <>
+            <Navbar />
+            <main className="max-w-screen-xl mx-auto px-6 py-6">
+                <div className="flex flex-col md:flex-row gap-6 h-full">
+                    <div className="w-full h-full md:w-3/4">
+                        <Preview fontSize={fontSize} fontFamily={fontFamily} letterSpace={letterSpace} lineHeight={lineHeight}/>
+                    </div>
+                    <div className="w-full md:w-1/4">
+                        <Styling
+                            onFontSizeChange={handleChange}
+                            onFontFamilyChange={handleFontFamilyChange}
+                            onLetterSpaceChange={handleLetterSpacingChange}
+                            onLineHeightChange={handleLineHeightChange}
+                        />
+                    </div>
+                </div>
+            </main>
+        </>
+    );
 }

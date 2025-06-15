@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useFontSize(defaultSize: number = 12) {
+export function useFontSize(defaultSize: number = 14) {
     const [fontSize, setFontSize] = useState(defaultSize);
 
     const handleChange = ( value : string ) => {
