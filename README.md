@@ -35,8 +35,8 @@ A modern, production-ready template for building high-performance web applicatio
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/frontio-ai/vite-template.git
-   cd vite-template
+   git clone https://github.com/virtualharsh/code-image.git
+   cd code-image
    ```
 
 2. **Install dependencies**
