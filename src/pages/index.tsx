@@ -5,6 +5,8 @@ import { useFontFamily } from "@/hooks/useFontFamily";
 import { useFontSize } from "@/hooks/useFontSize";
 import { useLetterSpacing } from "@/hooks/useLetterSpacing";
 import { useLineHeightChange } from "@/hooks/useLineHeightChange";
+import { Link } from "react-router-dom";
+
 
 export default function IndexPage() {
     const { fontSize, handleChange } = useFontSize(12);
@@ -29,6 +31,15 @@ export default function IndexPage() {
                         />
                     </div>
                 </div>
+                <footer className="w-full flex items-center justify-start py-3">
+                    <div
+                        className="flex mt-4  items-center gap-2 text-current"
+                    >
+                        <span className="text-default-600">Made with 🩵 by</span>
+                        <a href="https://github.com/virtualharsh" target="_blank" className="text-blue-300">Harsh</a> &
+                        <a href="https://github.com/jayjoshi2512" target="_blank" className="text-blue-300">Jay</a>
+                    </div>
+                </footer>
             </main>
         </>
     );

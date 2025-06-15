@@ -15,13 +15,12 @@ export default function DefaultLayout({
             </main>
             <footer className="w-full flex items-center justify-center py-3">
                 <Link
-                    isExternal
-                    className="flex items-center gap-1 text-current"
-                    href="https://heroui.com"
-                    title="heroui.com homepage"
+                    className="flex items-center gap-2 text-current"
                 >
-                    <span className="text-default-600">Powered by</span>
-                    <p className="text-primary">HeroUI</p>
+                    <span className="text-default-600">Made with 🩵 by</span>
+                    <a href="https://github.com/virtualharsh" className="text-blue-300">Harsh</a> & 
+                    <a href="https://github.com/virtualharsh" className="text-blue-300">Jay</a> 
+
                 </Link>
             </footer>
         </div>
