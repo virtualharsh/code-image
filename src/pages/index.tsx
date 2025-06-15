@@ -5,7 +5,6 @@ import { useFontFamily } from "@/hooks/useFontFamily";
 import { useFontSize } from "@/hooks/useFontSize";
 import { useLetterSpacing } from "@/hooks/useLetterSpacing";
 import { useLineHeightChange } from "@/hooks/useLineHeightChange";
-import { Link } from "react-router-dom";
 
 
 export default function IndexPage() {

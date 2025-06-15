@@ -1,6 +1,6 @@
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
-import { androidstudio } from '@uiw/codemirror-themes-all';
+import { andromeda } from '@uiw/codemirror-themes-all';
 import { EditorView } from '@codemirror/view';
 
 interface PreviewProps {
@@ -18,7 +18,8 @@ export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight 
                 value=""
                 placeholder="Write your code here!"
                 height="600px"
-                theme={androidstudio}
+                theme={andromeda}
+                
                 extensions={[
                     javascript(),
                     EditorView.theme({
