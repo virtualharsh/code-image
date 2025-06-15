@@ -2,8 +2,6 @@
 
 A modern, production-ready template for building high-performance web applications with Vite and HeroUI v2. This template provides a solid foundation with best practices, TypeScript support, and a comprehensive development setup.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/frontio-ai/vite-template)
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontio-ai/vite-template)
 
 ## 🚀 Features
 
@@ -218,16 +216,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🙏 Acknowledgments
 
-- [Frontio AI](https://github.com/frontio-ai) for creating this template
 - [HeroUI Team](https://heroui.com) for the amazing component library
 - [Vite Team](https://vitejs.dev) for the blazing fast build tool
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ by <a href="https://github.com/frontio-ai">Frontio AI</a></p>
-  <p>
-    <a href="https://github.com/frontio-ai/vite-template/issues">Report Bug</a> • 
-    <a href="https://github.com/frontio-ai/vite-template/issues">Request Feature</a>
-  </p>
+  <p>Made with ❤️ by <a href="https://github.com/frontio-ai"><a href="https://github.com/virtualharsh">Harsh</a>&<a href="https://github.com/jayjoshi2512">Jay</a></p>
 </div>
