@@ -222,5 +222,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 <div align="center">
-  <p>Made with ❤️ by <a href="https://github.com/frontio-ai"><a href="https://github.com/virtualharsh">Harsh</a>&<a href="https://github.com/jayjoshi2512">Jay</a></p>
+  <p>Made with ❤️ by <a href="https://github.com/frontio-ai"><a href="https://github.com/virtualharsh">Harsh </a> & <a href="https://github.com/jayjoshi2512"> Jay </a></p>
 </div>
