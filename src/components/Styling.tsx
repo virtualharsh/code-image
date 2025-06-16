@@ -42,7 +42,7 @@ export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetter
                 placeholder="Select font family"
                 variant="underlined"
                 className="px-2"
-
+                defaultSelectedKeys={["Fira Code"]}
                 onChange={(e) => onFontFamilyChange(e.target.value)}
             >
                 {FontFamilyOptions.map((font) => (
@@ -88,6 +88,7 @@ export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetter
                 placeholder="Select a theme"
                 variant="underlined"
                 className="px-2"
+                defaultSelectedKeys={["abcdef"]}
                 onChange={(e) => onThemeChange(e.target.value)}
             >
                 {CodeMirrorThemes.map((theme) => (
