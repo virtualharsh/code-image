@@ -38,6 +38,6 @@ export const siteConfig = {
     ],
     links: {
         github: "https://github.com/virtualharsh/code-image",
-        sponsor: "https://patreon.com/",
+        sponsor: "https://buymeacoffee.com/harshsonegra",
     },
 };
