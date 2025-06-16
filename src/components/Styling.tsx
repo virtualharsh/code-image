@@ -31,8 +31,8 @@ export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetter
                 variant="underlined"
                 placeholder="14"
                 type="number"
-                max={24}
-                min={10}
+                max={18}
+                min={8}
                 defaultValue="14"
                 onChange={(e) => onFontSizeChange(e.target.value)}
             />
