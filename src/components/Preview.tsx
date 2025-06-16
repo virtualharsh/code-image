@@ -14,10 +14,6 @@ interface PreviewProps {
 
 
 export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight, theme, bg }: PreviewProps) {
-
-    console.log(bg);
-    
-
     return (
         <div className="w-full h-[600px]">
             <CodeMirror
@@ -35,7 +31,7 @@ export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight,
                             // letterSpacing: `${letterSpace}px`,  
                             lineHeight: `${lineHeight}`,
                             backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("/${bg}")`,
-                            backgroundSize: '100% auto', 
+                            backgroundSize: 'cover', 
                             backgroundRepeat: 'repeat', 
                             backgroundPosition: 'center' 
                             
