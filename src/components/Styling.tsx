@@ -3,6 +3,8 @@ import { Select, SelectItem } from "@heroui/select";
 import { Input } from "@heroui/input";
 import { FontFamilyOptions } from "@/config/fonts.ts"
 import { CodeMirrorThemes } from "@/config/themes.ts";
+import { background } from "@/config/background";
+
 
 
 interface StylingProps {
@@ -10,10 +12,11 @@ interface StylingProps {
     onFontFamilyChange: (value: string) => void,
     onLetterSpaceChange: (value: string) => void;
     onLineHeightChange: (value: string) => void;
-    onThemeChange: (value: string) => void; // Add this
+    onThemeChange: (value: string) => void; 
+    onBGChange : (value: string) => void
 }
 
-export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetterSpaceChange, onLineHeightChange, onThemeChange }: StylingProps) {
+export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetterSpaceChange, onLineHeightChange, onThemeChange, onBGChange }: StylingProps) {
 
     return (
         <Form className="flex gap-y-4"
@@ -90,6 +93,22 @@ export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetter
                 {CodeMirrorThemes.map((theme) => (
                     <SelectItem key={theme.key}>
                         {theme.label}
+                    </SelectItem>
+                ))}
+            </Select>
+
+            <hr />
+
+            <Select
+                label="Background"
+                placeholder="Select Background"
+                variant="underlined"
+                className="px-2"
+                onChange={(e) => onBGChange(e.target.value)}
+            >
+                {background.map((bg) => (
+                    <SelectItem key={bg.key}>
+                        {bg.label}
                     </SelectItem>
                 ))}
             </Select>

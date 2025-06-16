@@ -26,4 +26,3 @@ export const CodeMirrorThemes = [
     { label: 'VSCode', key: 'vscode' },
     { label: 'Xcode', key: 'xcode' },
 ];
-  

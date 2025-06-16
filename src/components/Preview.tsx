@@ -2,6 +2,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { EditorView } from '@codemirror/view';
 import { themeMap } from '@/config/themeMap';
+import { background } from '@/config/background';
 
 interface PreviewProps {
     fontSize: number;
@@ -9,10 +10,14 @@ interface PreviewProps {
     letterSpace: number;
     lineHeight: number;
     theme: string;
+    bg : string;
 }
 
 
-export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight, theme }: PreviewProps) {
+export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight, theme, bg }: PreviewProps) {
+
+    console.log(bg);
+    
 
     return (
         <div className="w-full h-[600px]">
@@ -30,6 +35,11 @@ export default function Preview({ fontSize, fontFamily, letterSpace, lineHeight,
                             fontSize: `${fontSize}px`,
                             // letterSpacing: `${letterSpace}px`,  
                             lineHeight: `${lineHeight}`,
+                            backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("/${bg}")`,
+                            backgroundSize: '100% auto', 
+                            backgroundRepeat: 'repeat', 
+                            backgroundPosition: 'center' 
+                            
                         },
                         '.cm-scroller': {
                             fontFamily: `${fontFamily}, monospace`,
