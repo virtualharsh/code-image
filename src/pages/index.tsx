@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar";
 import Preview from "@/components/Preview";
 import Styling from "@/components/Styling";
+import { useCodeTheme } from "@/hooks/useCodeTheme";
 import { useFontFamily } from "@/hooks/useFontFamily";
 import { useFontSize } from "@/hooks/useFontSize";
 import { useLetterSpacing } from "@/hooks/useLetterSpacing";
@@ -12,6 +13,7 @@ export default function IndexPage() {
     const { fontFamily, handleFontFamilyChange } = useFontFamily();
     const { letterSpace, handleLetterSpacingChange } = useLetterSpacing(1);
     const { lineHeight, handleLineHeightChange } = useLineHeightChange(1);
+    const {theme, handleThemeChange} = useCodeTheme();
 
     return (
         <>
@@ -19,7 +21,7 @@ export default function IndexPage() {
             <main className="max-w-screen-xl mx-auto px-6 py-6">
                 <div className="flex flex-col md:flex-row gap-6 h-full">
                     <div className="w-full h-full md:w-3/4">
-                        <Preview fontSize={fontSize} fontFamily={fontFamily} letterSpace={letterSpace} lineHeight={lineHeight}/>
+                        <Preview fontSize={fontSize} fontFamily={fontFamily} letterSpace={letterSpace} lineHeight={lineHeight} theme={theme}/>
                     </div>
                     <div className="w-full md:w-1/4">
                         <Styling
@@ -27,6 +29,7 @@ export default function IndexPage() {
                             onFontFamilyChange={handleFontFamilyChange}
                             onLetterSpaceChange={handleLetterSpacingChange}
                             onLineHeightChange={handleLineHeightChange}
+                            onThemeChange={handleThemeChange}
                         />
                     </div>
                 </div>

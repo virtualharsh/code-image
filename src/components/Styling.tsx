@@ -2,15 +2,18 @@ import { Form } from "@heroui/form";
 import { Select, SelectItem } from "@heroui/select";
 import { Input } from "@heroui/input";
 import { FontFamilyOptions } from "@/config/fonts.ts"
+import { CodeMirrorThemes } from "@/config/themes.ts";
+
 
 interface StylingProps {
     onFontSizeChange: (value: string) => void,
     onFontFamilyChange: (value: string) => void,
     onLetterSpaceChange: (value: string) => void;
     onLineHeightChange: (value: string) => void;
+    onThemeChange: (value: string) => void; // Add this
 }
 
-export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetterSpaceChange, onLineHeightChange }: StylingProps) {
+export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetterSpaceChange, onLineHeightChange, onThemeChange }: StylingProps) {
 
     return (
         <Form className="flex gap-y-4"
@@ -76,6 +79,20 @@ export default function Styling({ onFontSizeChange, onFontFamilyChange, onLetter
                     onChange={(e) => onLineHeightChange(e.target.value)}
                 />
             </div>
+
+            <Select
+                label="Theme"
+                placeholder="Select a theme"
+                variant="underlined"
+                className="px-2"
+                onChange={(e) => onThemeChange(e.target.value)}
+            >
+                {CodeMirrorThemes.map((theme) => (
+                    <SelectItem key={theme.key}>
+                        {theme.label}
+                    </SelectItem>
+                ))}
+            </Select>
         </Form>
     );
 }
